@@ -1,0 +1,59 @@
+<graph version="v4.05" name="" author="" interval="1" timeMode="asynchronous" distributionMode="fixed speed" speed="100" actions="1" dice="D6" skill="" strategy="" multiplayer="" width="1200" height="1360" numberOfRuns="100" visibleRuns="25" colorCoding="0">
+  <connection type="Resource Connection" start="2" end="16" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="45" y="112" color="Black" caption="Tourism" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Converter" x="128" y="112" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull all" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="1" end="2" label="5" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Source" x="45" y="270" color="Black" caption="River" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="4" end="1" label="25%" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Source" x="528" y="101" color="Black" caption="Disease" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="6" end="8" label="0.1%" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="529" y="289" color="Black" caption="Plague" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="25" end="17" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="17" end="37" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="25" end="18" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="16" end="45" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="45" end="25" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="16" end="46" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="46" end="47" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="228" y="112" color="Black" caption="Population" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="5" capacity="-1"/>
+  <node symbol="Converter" x="240" y="386" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Converter" x="95" y="386" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="34" end="24" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="24" end="25" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="37" end="23" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="23" end="25" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Converter" x="207" y="445" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Converter" x="131" y="437" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Pool" x="166" y="340" color="Black" caption="Workers" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="18" end="34" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Source" x="40" y="681" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="State Connection" start="34" end="27" label=">0" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="27" end="35" label="100%" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="34" end="29" label="+1%" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="33" end="36" label="100%" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="37" end="33" label=">0" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Source" x="320" y="682" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Pool" x="94" y="534" color="Black" caption="Mines" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="138" y="685" color="Black" caption="Iron Bars" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="200" y="680" color="Black" caption="Steam" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="238" y="537" color="Black" caption="Boiler" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="55" end="48" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="41" end="40" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="253" y="916" color="Black" caption="Pressure Turrets" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Converter" x="252" y="805" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="36" end="55" label="20" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="36" end="41" label="10" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="37" end="31" label="+5%" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Converter" x="200" y="200" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Converter" x="258" y="199" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Pool" x="447" y="669" color="Black" caption="Pilots" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="349" y="812" color="Black" caption="Airship Parts" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="47" end="51" label="1" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="51" end="48" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Converter" x="399" y="751" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="53" end="56" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Converter" x="347" y="909" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="48" end="53" label="2" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Converter" x="290" y="759" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="interactive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Pool" x="347" y="997" color="Black" caption="Airships" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+</graph>
