@@ -6,7 +6,7 @@ using namespace std;
 class AnimatedSprite : public sf::Sprite
 {
 public:
-	AnimatedSprite(sf::Texture& pTexture, int pRows, int pColumns); 
+	AnimatedSprite(string pTextureLocation, int pRows, int pColumns); 
     void Animate(int beginRow, int endRow, int beginCol, int endCol, int timeMili);
 	void Animate(int beginIndex, int endIndex, int timeMili);
 	void StopAnimation();

@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include <iostream>
 
-Player::Player(sf::Texture pTexture, int pRows, int pColumns) : GameObject(pTexture, pRows, pColumns)
+Player::Player(string pTextureLocation, int pRows, int pColumns) : GameObject(pTextureLocation, pRows, pColumns)
 {
 
 }

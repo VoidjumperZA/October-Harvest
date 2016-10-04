@@ -3,15 +3,20 @@
 
 using namespace std;
 
-AnimatedSprite::AnimatedSprite(sf::Texture& pTexture, int pRows, int pColumns) : sf::Sprite(pTexture)
+AnimatedSprite::AnimatedSprite(string pTextureLocation, int pRows, int pColumns) : sf::Sprite()
 {
 	counter = 0;
 	isAnimating = false;
 	//rows and columns
 	rows = pRows;
 	columns = pColumns;
+
+	sf::Texture *texture = new sf::Texture();
+	texture->loadFromFile(pTextureLocation);
+	cout << (texture->loadFromFile(pTextureLocation)) << endl;
+	setTexture(*texture);
 	
-	imageSize = pTexture.getSize();
+	imageSize = texture->getSize();
 
 	//the pixel width and height of one frame in our image
 	frameHeight = imageSize.x / rows;

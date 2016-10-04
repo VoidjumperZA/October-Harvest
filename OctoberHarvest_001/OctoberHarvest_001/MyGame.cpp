@@ -12,12 +12,11 @@ int main()
 
 	Level *level = new Level(&gameWindow);
 
-	sf::Texture *texture = new sf::Texture();
-	cout << (texture->loadFromFile("Assets/Sprites/testNumbers.png")) << endl;
+	
 	//AnimatedSprite *animSprite = new AnimatedSprite(*texture, 3, 3);
 	//animSprite->setPosition(500, 500);
 
-	GameObject *gameObject = new GameObject(*texture, 3, 3);
+	GameObject *gameObject = new GameObject("Assets/Sprites/testNumbers.png", 3, 3);
 	gameObject->setPosition(500, 500);
 
 	level->CreateNewLayer();

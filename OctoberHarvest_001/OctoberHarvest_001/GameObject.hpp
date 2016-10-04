@@ -8,7 +8,7 @@ using namespace std;
 class GameObject : public AnimatedSprite
 {
 public: 
-	GameObject(sf::Texture pTexture, int pRows, int pColumns);
+	GameObject(string pTextureLocation, int pRows, int pColumns);
 	virtual void Update();
 	virtual void OnCollision();
     void Destroy();

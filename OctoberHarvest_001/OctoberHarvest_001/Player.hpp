@@ -7,7 +7,7 @@ using namespace std;
 class Player : public GameObject
 {
 public:
-	Player(sf::Texture pTexture, int pRows, int pColumns);
+	Player(string pTextureLocation, int pRows, int pColumns);
 private:
 };
 #endif
