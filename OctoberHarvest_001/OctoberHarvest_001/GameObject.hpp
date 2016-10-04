@@ -10,7 +10,7 @@ class GameObject : public AnimatedSprite
 public: 
 	GameObject(string pTextureLocation, int pRows, int pColumns);
 	virtual void Update();
-	virtual void OnCollision();
+	virtual void OnCollision(GameObject *pTargetObject);
     void Destroy();
 private:
 	int count;

@@ -7,16 +7,16 @@ using namespace std;
 class Level 
 {
 public:
-	Level(sf::RenderWindow *pWindow);
+	Level();
 	void CreateNewLayer();
 	size_t GetNumberOfLayers();
-	void AddToLayer(GameObject pGameObject, int pLayerNumber);
+	void AddToLayer(GameObject *pGameObject, int pLayerNumber);
 	void ToggleLayer(int pLayerNumber, bool pStatus);
 	bool GetLayerStatus(int pLayerNumber);
 	void UpdateLevel();
 private:
 	//vector<vector<GameObject>> *layers = new vector<vector<GameObject>>();
-	vector<vector<GameObject>> layers;
+	vector<vector<GameObject*>> layers;
 	map<int, bool> layerStatus;
 	sf::RenderWindow *gameWindow;
 };

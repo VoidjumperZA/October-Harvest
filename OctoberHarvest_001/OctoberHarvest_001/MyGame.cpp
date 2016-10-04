@@ -1,58 +1,44 @@
 #include <SFML/Graphics.hpp>
+#include "GameScene.hpp"
 #include "Level.hpp"
 #include "GameObject.hpp"
 #include "AnimatedSprite.hpp"
+#include "Player.hpp"
 #include <iostream>
 using namespace std;
+
+sf::RenderWindow *gameWindow;
 
 int main()
 {
 	//create a new game window
-	sf::RenderWindow gameWindow(sf::VideoMode(1600, 900), "Harpoon Tom");
+	gameWindow = new sf::RenderWindow(sf::VideoMode(1600, 900), "Harpoon Tom");
 
-	Level *level = new Level(&gameWindow);
-
-	
-	//AnimatedSprite *animSprite = new AnimatedSprite(*texture, 3, 3);
-	//animSprite->setPosition(500, 500);
-
-	GameObject *gameObject = new GameObject("Assets/Sprites/testNumbers.png", 3, 3);
-	gameObject->setPosition(500, 500);
-
-	level->CreateNewLayer();
-	level->AddToLayer(*gameObject, 0);
-
-	/*level->CreateNewLayer();
-	level->AddToLayer(*gameObject, 0);3*/	
+	GameScene *gameScene = new GameScene();
 
 	//while our game window is open, clear and display every frame
-	while (gameWindow.isOpen())
+	while (gameWindow->isOpen())
 	{
-		gameWindow.clear();
-		level->UpdateLevel();
+		gameWindow->clear();
+		gameScene->SceneRefresh();
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{
-			level->ToggleLayer(0, false);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
-		{
-			level->ToggleLayer(0, true);
-		}
-		//animSprite->Animate(2, 5, 1000);
 		//check if a close event is happening, if it is, close the window
 		sf::Event event;
-		while (gameWindow.pollEvent(event))
+		while (gameWindow->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 			{
-				gameWindow.close();
+				gameWindow->close();
 			}
 		}
 
-		//gameWindow.draw(*gameObject);
-		gameWindow.display();
+		gameWindow->display();
 	}
 
 	return 0;
+}
+
+void DrawOnWindow(GameObject *pGameObject)
+{
+	gameWindow->draw(*pGameObject);
 }

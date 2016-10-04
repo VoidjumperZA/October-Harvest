@@ -5,96 +5,76 @@ using namespace std;
 
 AnimatedSprite::AnimatedSprite(string pTextureLocation, int pRows, int pColumns) : sf::Sprite()
 {
+	//intialisation
 	counter = 0;
 	isAnimating = false;
-	//rows and columns
 	rows = pRows;
 	columns = pColumns;
+	textureLocation = pTextureLocation;
 
-	sf::Texture *texture = new sf::Texture();
-	texture->loadFromFile(pTextureLocation);
-	cout << (texture->loadFromFile(pTextureLocation)) << endl;
-	setTexture(*texture);
-	
-	imageSize = texture->getSize();
-
-	//the pixel width and height of one frame in our image
-	frameHeight = imageSize.x / rows;
-	frameWidth = imageSize.y / columns;
-
-	numberOfFrames = pRows * pColumns;
-	frames = new sf::Vector2u[numberOfFrames];
-
+	//loads the texture, sets up the frame array, the
+	//right sizes and any other initialisation work
 	setUpImage();
-	//setTextureRect(sf::IntRect(0, 0, 60, 60));
 }
 
 //animate the sprite if want to use precise column/row co-ordinates
-void AnimatedSprite::Animate(int beginRow, int endRow, int beginCol, int endCol, int timeMili)
+void AnimatedSprite::Animate(int beginRow, int beginCol, int endRow, int endCol, int timeMili)
 {
-	//
-	//                             NOTICE
-	//
-	//this is to be fixed later, work out index via the column/row number and subsitute
-	//that into our current method. But we have a way that works, this is just to be fancy.
-	//Fancy can come when the game is done.
-	
-	/*
-	if (isAnimating == false)
-	{
-		startAnimation();
-	}
-	else
-	{
-		sf::Time &elapsedTime = clock->getElapsedTime();
-		if (elapsedTime.asMilliseconds() >= timeMili)
-		{
-			setTextureRect(sf::IntRect(frames[beginIndex + counter].x, frames[beginIndex + counter].y, frameWidth, frameHeight));
-			clock->restart();
+	//work out our begining and end indexes based on
+	//the columns and rows we were give to work with
+	int beginIndex = (rows * beginRow) + beginCol;
+	int endIndex = (rows * endRow) + endCol;
 
-			//cout << "x: " << frames[beginIndex + counter].x << endl << "y: " << frames[beginIndex + counter].y << endl << endl;
-			//cout << "beginIndex + counter: " << frames[beginIndex].x << endl;
-			cout << beginIndex + counter << endl;
-			counter++;
-			if (counter > endIndex - beginIndex)
-			{
-				counter = 0;
-			}
-		}
-
-	}
-	*/
+	//once we've got these initial values, plug them into our internal animation
+	internalAnimation(beginIndex, endIndex, timeMili);
 }
 
 //animate the sprite if you know the exact indexes of where you want to start and end
 void AnimatedSprite::Animate(int beginIndex, int endIndex, int timeMili)
 {
+	//since our internal animation is based off this method, we can
+	//just go ahead and use the values verbatim
+	internalAnimation(beginIndex, endIndex, timeMili);
+}
+
+//since our actual animation is basically the same, we use our overloaded Animate
+//methods to work out some initial values and then just plug them into the same
+//internal animation method
+void AnimatedSprite::internalAnimation(int beginIndex, int endIndex, int timeMili)
+{
+	//resets the boolean and the clock
 	if (isAnimating == false)
 	{
 		startAnimation();
 	}
 	else
 	{
+		//clock moderates animation speed
 		sf::Time &elapsedTime = clock->getElapsedTime();
+
+		//once it's time to animate the next frame
 		if (elapsedTime.asMilliseconds() >= timeMili)
 		{
+			//set the area of the texture the sprite is displaying and restart our clock
 			setTextureRect(sf::IntRect(frames[beginIndex + counter].x, frames[beginIndex + counter].y, frameWidth, frameHeight));
 			clock->restart();
 
-			//cout << "x: " << frames[beginIndex + counter].x << endl << "y: " << frames[beginIndex + counter].y << endl << endl;
-			//cout << "beginIndex + counter: " << frames[beginIndex].x << endl;
-			//cout << beginIndex + counter << endl;
+			//for debugging the right frames are being set
+			/*cout << "x: " << frames[beginIndex + counter].x << endl << "y: " << frames[beginIndex + counter].y << endl << endl;
+			cout << "beginIndex + counter: " << frames[beginIndex].x << endl;
+			cout << beginIndex + counter << endl;*/
+
+			//used to cycle through the right frames needs to
+			//be reset once it's reached the end of the block
+			//of frames we want to display
 			counter++;
 			if (counter > endIndex - beginIndex)
 			{
 				counter = 0;
 			}
 		}
-
 	}
 }
-
-	
 
 void AnimatedSprite::StopAnimation()
 {
@@ -103,6 +83,23 @@ void AnimatedSprite::StopAnimation()
 
 void AnimatedSprite::setUpImage()
 {
+	//loads the correct texture
+	sf::Texture *texture = new sf::Texture();
+	texture->loadFromFile(textureLocation);
+	cout << (texture->loadFromFile(textureLocation)) << endl;
+	setTexture(*texture);
+
+	//get's the image's size
+	imageSize = texture->getSize();
+
+	//the pixel width and height of one frame in our image
+	frameHeight = imageSize.x / rows;
+	frameWidth = imageSize.y / columns;
+
+	//create an array with the number of frames we have
+	numberOfFrames = rows * columns;
+	frames = new sf::Vector2u[numberOfFrames];
+
 	//used for spacing out across our number of rows
 	int rowIncrementor = 0;
 	int columnIncrementor = 0;
