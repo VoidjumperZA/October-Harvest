@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 ﻿  Level.cpp
 c:\users\voidjumper\desktop\temporary saxion\october harvest git\octoberharvest_001\octoberharvest_001\level.cpp(19): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 c:\users\voidjumper\desktop\temporary saxion\october harvest git\octoberharvest_001\octoberharvest_001\level.cpp(49): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
 c:\users\voidjumper\desktop\temporary saxion\october harvest git\octoberharvest_001\octoberharvest_001\level.cpp(64): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
   OctoberHarvest_001.vcxproj -> C:\Users\Voidjumper\Desktop\Temporary Saxion\October Harvest Git\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.exe
   OctoberHarvest_001.vcxproj -> C:\Users\Voidjumper\Desktop\Temporary Saxion\October Harvest Git\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.pdb (Full PDB)
+=======
+﻿  Player.cpp
+  MyGame.cpp
+  Level.cpp
+c:\users\voidjumper\desktop\desktop october harvest git\octoberharvest_001\octoberharvest_001\level.cpp(17): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\voidjumper\desktop\desktop october harvest git\octoberharvest_001\octoberharvest_001\level.cpp(50): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  GameObject.cpp
+  AnimatedSprite.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'C:\Users\Voidjumper\Desktop\Desktop October Harvest Git\OctoberHarvest_001\packages\sfml-window.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\dynamic\sfml-window-d.lib'
+>>>>>>> 76f9b2cd6d255347fc95649bcc49bed5e689d603
