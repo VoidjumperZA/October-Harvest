@@ -12,9 +12,12 @@ sf::RenderWindow *gameWindow;
 int main()
 {
 	//create a new game window
-	gameWindow = new sf::RenderWindow(sf::VideoMode(1600, 900), "Harpoon Tom");
+	gameWindow = new sf::RenderWindow(sf::VideoMode(1600, 900), "October Harvest");
 
+	Scene *holderScene = new Scene();
 	GameScene *gameScene = new GameScene();
+
+	holderScene = gameScene;
 
 	//while our game window is open, clear and display every frame
 	while (gameWindow->isOpen())

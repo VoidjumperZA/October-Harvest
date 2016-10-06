@@ -2,6 +2,7 @@
 #define PLAYER_HEADER
 
 #include <SFML/Graphics.hpp>
+#include "Level.hpp"
 #include "GameObject.hpp"
 using namespace std;
 class Player : public GameObject
@@ -12,6 +13,14 @@ public:
 	void OnCollision(GameObject *pTargetObject) override;
 private:
 	int playerIndentifier;
+	float horizontalInertia;
+	float maxHInertia;
+	float horizontalAcceleration;
+	float horizontalDeceleration;
+	float verticalInertia;
+	float maxVInertia;
+	float verticalAcceleration;
+	float verticalDeceleration;
 	sf::Keyboard::Key *forward;
 	sf::Keyboard::Key *backward;
 	sf::Keyboard::Key *left;
@@ -19,6 +28,8 @@ private:
 	sf::Keyboard::Key *interact;
 	sf::Keyboard::Key *altinteract;
 	void checkForInput();
-	void movement();
+	void inputToMovement(float &pInertiaAxis, float &pAccelerationAxis, float &pMaxInertia, int pPolarity);
+	void applyInertia(float &pInertiaAxis, float &pDecelerationAxis);
+	void movement(float pHSpeed, float pVSpeed);
 };
 #endif

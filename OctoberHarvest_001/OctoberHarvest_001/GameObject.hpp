@@ -11,9 +11,11 @@ public:
 	GameObject(string pTextureLocation, int pRows, int pColumns);
 	virtual void Update();
 	virtual void OnCollision(GameObject *pTargetObject);
-    void Destroy();
+    virtual void Destroy();
+	virtual void AddToLevel(GameObject *pChildObject);
 private:
 	int count;
+
 };
 
 #endif

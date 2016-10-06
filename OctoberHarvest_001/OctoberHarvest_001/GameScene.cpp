@@ -3,7 +3,7 @@
 
 using namespace std;
 
-GameScene::GameScene()
+GameScene::GameScene() : Scene()
 {
 	level = new Level();
 
@@ -16,12 +16,16 @@ GameScene::GameScene()
 	level->CreateNewLayer();
 	level->AddToLayer(player_001, 0);
 	level->CreateNewLayer();
-	level->AddToLayer(player_002, 1);
+	level->AddToLayer(player_002, 0);
 }
 
 void GameScene::SceneRefresh()
 {
 	level->UpdateLevel();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		level->ToggleLayer(0, false);
+	}
 }
 
 

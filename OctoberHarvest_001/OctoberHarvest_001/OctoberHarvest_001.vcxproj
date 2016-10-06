@@ -148,6 +148,7 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.hpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="GameScene.hpp" />
     <ClInclude Include="Level.hpp" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Scene.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
