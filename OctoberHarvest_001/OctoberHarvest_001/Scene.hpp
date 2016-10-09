@@ -8,7 +8,8 @@ class Scene
 {
 public:
 	Scene();
-	virtual void SceneRefresh();
+	virtual void SceneUpdate(float pFrameTime);
+	virtual void SceneRender();
 private:
 
 };

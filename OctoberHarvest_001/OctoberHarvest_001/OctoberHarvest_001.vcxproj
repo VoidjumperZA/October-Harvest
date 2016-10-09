@@ -143,18 +143,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.hpp" />
+    <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameScene.hpp" />
     <ClInclude Include="Level.hpp" />
+    <ClInclude Include="MainMenuScene.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Scene.hpp" />
   </ItemGroup>

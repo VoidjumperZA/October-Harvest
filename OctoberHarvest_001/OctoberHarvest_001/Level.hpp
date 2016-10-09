@@ -13,7 +13,9 @@ public:
 	void AddToLayer(GameObject *pGameObject, int pLayerNumber);
 	void ToggleLayer(int pLayerNumber, bool pStatus);
 	bool GetLayerStatus(int pLayerNumber);
-	void UpdateLevel();
+	void UpdateLevel(float pFrameTime);
+	void RenderLevel();
+	void TranslateLayer(int pLayerNumber, float pXTranslation, float pYTranslation);
 private:
 	//vector<vector<GameObject>> *layers = new vector<vector<GameObject>>();
 	vector<vector<GameObject*>> layers;

@@ -9,7 +9,7 @@ GameObject::GameObject(string pTextureLocation, int pRows, int pColumns) : Anima
 }
 
 
-void GameObject::Update()
+void GameObject::Update(float pFrameTime)
 {
 	
 }
@@ -25,4 +25,14 @@ void GameObject::OnCollision(GameObject *pTargetObject)
 void GameObject::Destroy()
 {
 
+}
+
+void GameObject::AddToLevel(GameObject *pChildObject)
+{
+
+}
+
+void GameObject::Translate(float pXTranslation, float pYTranslation)
+{
+	move(pXTranslation, pYTranslation);
 }

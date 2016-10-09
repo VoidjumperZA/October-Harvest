@@ -8,12 +8,12 @@ Player::Player(string pTextureLocation, int pRows, int pColumns, int pPlayerInde
 
 	horizontalInertia = 0.0f;
 	verticalInertia = 0.0f;
-	maxHInertia = 0.7f;
-	maxVInertia = 0.7f;
-	horizontalAcceleration = 0.003f;
-	horizontalDeceleration = 0.0023f;
-	verticalAcceleration = 0.003f;
-	verticalDeceleration = 0.0023f;
+	maxHInertia = 700.0f;
+	maxVInertia = 700.0f;
+	horizontalAcceleration = 3.0f;
+	horizontalDeceleration = 2.0f;
+	verticalAcceleration = 3.0f;
+	verticalDeceleration = 2.0f;
 
 	//store the keybinds relating to player one or two
 	forward = new sf::Keyboard::Key[2] { sf::Keyboard::W, sf::Keyboard::Numpad8 };
@@ -24,19 +24,19 @@ Player::Player(string pTextureLocation, int pRows, int pColumns, int pPlayerInde
 	altinteract = new sf::Keyboard::Key[2] { sf::Keyboard::LShift, sf::Keyboard::Add };
 }
 
-void Player::Update()
+void Player::Update(float pFrameTime)
 {
 	checkForInput();
 	//Animate(2, 5, 1000);
-	Animate(0, 2, 1, 2, 1000 / (playerIndentifier + 1));
-	movement(horizontalInertia, verticalInertia);
-	cout << "(" << horizontalInertia << ", " << verticalInertia << ")" << endl;
+	Animate(0, 2, 1, 2, 200 / (playerIndentifier + 1));
+	movement(horizontalInertia * pFrameTime, verticalInertia * pFrameTime);
+	//cout << "(" << horizontalInertia << ", " << verticalInertia << ")" << endl;
 }
 
 //handle all player input
 void Player::checkForInput()
 {
-	//
+	//left and forward (negative)
 	if (sf::Keyboard::isKeyPressed(left[playerIndentifier]))
 	{
 		inputToMovement(horizontalInertia, horizontalAcceleration, maxHInertia, -1);
@@ -46,7 +46,7 @@ void Player::checkForInput()
 		inputToMovement(verticalInertia, verticalAcceleration, maxVInertia, -1);
 	}
 
-	//
+	//if no key presses
 	if (!sf::Keyboard::isKeyPressed(left[playerIndentifier]) && !(sf::Keyboard::isKeyPressed(right[playerIndentifier])) && horizontalInertia != 0)
 	{
 		applyInertia(horizontalInertia, horizontalDeceleration);
@@ -57,7 +57,7 @@ void Player::checkForInput()
 		applyInertia(verticalInertia, verticalDeceleration);
 	}
 
-	//
+	//right and back (positive)
 	if (sf::Keyboard::isKeyPressed(right[playerIndentifier]))
 	{
 		inputToMovement(horizontalInertia, horizontalAcceleration, maxHInertia, 1);
@@ -90,24 +90,6 @@ void Player::inputToMovement(float &pInertiaAxis, float &pAccelerationAxis, floa
 
 void Player::applyInertia(float &pInertiaAxis, float &pDecelerationAxis)
 {
-	/*
-	if (horizontalInertia > 0)
-	{
-	horizontalInertia -= horizontalDeceleration;
-	if (horizontalInertia < horizontalDeceleration)
-	{
-	horizontalInertia = 0;
-	}
-	}
-	if (horizontalInertia < 0)
-	{
-	horizontalInertia += horizontalDeceleration;
-	if (horizontalInertia > horizontalDeceleration)
-	{
-	horizontalInertia = 0;
-	}
-	}
- */
 	if (pInertiaAxis > 0)
 	{
 		pInertiaAxis -= pDecelerationAxis;
@@ -127,7 +109,13 @@ void Player::applyInertia(float &pInertiaAxis, float &pDecelerationAxis)
 }
 void Player::OnCollision(GameObject *pTargetObject)
 {
+	//cout << "COLLIDE!" << endl;
+}
 
+
+void Player::Translate(float pXTranslation, float pYTranslation)
+{
+	move(pXTranslation, pYTranslation);
 }
 
 void Player::movement(float pHSpeed, float pVSpeed)

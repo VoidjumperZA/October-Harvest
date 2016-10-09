@@ -122,6 +122,9 @@ void AnimatedSprite::setUpImage()
 		}		
 	}
 
+	//set the first frame, just so the whole texture is not displayed
+	setTextureRect(sf::IntRect(frames[0].x, frames[0].y, frameWidth, frameHeight));
+
 	//just to debug the values have been set correctly
 	/*
 	for (int k = 0; k < numberOfFrames; k++)

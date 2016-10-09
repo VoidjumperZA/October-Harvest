@@ -50,7 +50,7 @@ void Level::ToggleLayer(int pLayerNumber, bool pStatus)
 	}
 }
 
-void Level::UpdateLevel()
+void Level::UpdateLevel(float pFrameTime)
 {
 	//
 	//       NOTE: this actually updates our game objects
@@ -67,7 +67,7 @@ void Level::UpdateLevel()
 			//update every gameobject in that layer
 			for (size_t j = 0; j < layers[i].size(); j++)
 			{
-				layers[i][j]->Update();
+				layers[i][j]->Update(pFrameTime);
 			}
 		}
 	}
@@ -78,6 +78,11 @@ void Level::UpdateLevel()
 	//
 
 	//go through each of our level's layers
+	
+}
+
+void Level::RenderLevel()
+{
 	for (size_t i = 0; i < layers.size(); i++)
 	{
 		//cout << "Layer " << i << "is " << layerStatus[i] << endl;
@@ -85,6 +90,19 @@ void Level::UpdateLevel()
 		for (size_t j = 0; j < layers[i].size(); j++)
 		{
 			DrawOnWindow(layers[i][j]);
+		}
+	}
+}
+
+void Level::TranslateLayer(int pLayerNumber, float pXTranslation, float pYTranslation)
+{
+	if (layerStatus[pLayerNumber] == true)
+	{
+		//cout << "Layer " << i << "is " << layerStatus[i] << endl;
+		//update every gameobject in that layer
+		for (size_t i = 0; i < layers[pLayerNumber].size(); i++)
+		{
+			layers[pLayerNumber][i]->Translate(pXTranslation, pYTranslation);
 		}
 	}
 }

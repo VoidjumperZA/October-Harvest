@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "GameScene.hpp"
+#include "MainMenuScene.hpp"
 #include "Level.hpp"
 #include "GameObject.hpp"
 #include "AnimatedSprite.hpp"
@@ -8,6 +9,9 @@
 using namespace std;
 
 sf::RenderWindow *gameWindow;
+sf::Clock *gameClock = new sf::Clock;
+float frameTime = 1.0f / 240.0f;
+float timer = 0.0f;
 
 int main()
 {
@@ -16,14 +20,39 @@ int main()
 
 	Scene *holderScene = new Scene();
 	GameScene *gameScene = new GameScene();
+	MainMenuScene *mainMenuScene = new MainMenuScene();
 
 	holderScene = gameScene;
 
 	//while our game window is open, clear and display every frame
 	while (gameWindow->isOpen())
 	{
-		gameWindow->clear();
-		gameScene->SceneRefresh();
+		timer += gameClock->getElapsedTime().asSeconds();
+		gameClock->restart();
+		//sf::Time &elapsedTime = gameClock->getElapsedTime();
+		//
+		bool updatedOnce = false;
+		while (timer > frameTime)
+		{
+			updatedOnce = true;
+			timer -= frameTime;			
+			holderScene->SceneUpdate(frameTime);			
+		}
+		if (updatedOnce)
+		{
+			gameWindow->clear();
+			holderScene->SceneRender();
+			gameWindow->display();
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+		{
+			holderScene = gameScene;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+		{
+			holderScene = mainMenuScene;
+		}
 
 		//check if a close event is happening, if it is, close the window
 		sf::Event event;
@@ -35,8 +64,12 @@ int main()
 			}
 		}
 
-		gameWindow->display();
+		
 	}
+	
+	delete mainMenuScene;
+	delete gameScene;
+	delete gameWindow;
 
 	return 0;
 }

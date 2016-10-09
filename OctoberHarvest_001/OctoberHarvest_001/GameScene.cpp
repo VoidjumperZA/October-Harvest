@@ -16,17 +16,23 @@ GameScene::GameScene() : Scene()
 	level->CreateNewLayer();
 	level->AddToLayer(player_001, 0);
 	level->CreateNewLayer();
-	level->AddToLayer(player_002, 0);
+	level->AddToLayer(player_002, 1);
+
 }
 
-void GameScene::SceneRefresh()
+void GameScene::SceneUpdate(float pFrameTime)
 {
-	level->UpdateLevel();
+	level->UpdateLevel(pFrameTime);
+	player_001->OnCollision(player_002);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
 		level->ToggleLayer(0, false);
 	}
 }
 
+void GameScene::SceneRender()
+{
+	level->RenderLevel();
+}
 
 /*	*/

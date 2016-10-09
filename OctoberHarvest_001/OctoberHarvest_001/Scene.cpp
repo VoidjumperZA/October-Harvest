@@ -8,9 +8,14 @@ Scene::Scene()
 
 }
 
-void Scene::SceneRefresh()
+void Scene::SceneUpdate(float pFrameTime)
 {
 	
+}
+
+void Scene::SceneRender()
+{
+
 }
 
 

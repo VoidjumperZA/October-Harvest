@@ -10,8 +10,10 @@ class GameScene : public Scene
 {
 public:
 	GameScene();
-	void SceneRefresh() override;
+	void SceneUpdate(float pFrameTime) override;
+	void SceneRender() override;
 private:
+	int *worldGrid[16][9];
 	Level *level;
 	Player *player_001;
 	Player *player_002;

@@ -9,8 +9,9 @@ class Player : public GameObject
 {
 public:
 	Player(string pTextureLocation, int pRows, int pColumns, int pPlayerIndentifier);
-	void Update() override;
+	void Update(float pFrameTime) override;
 	void OnCollision(GameObject *pTargetObject) override;
+	void Translate(float pXTranslation, float pYTranslation) override;
 private:
 	int playerIndentifier;
 	float horizontalInertia;
