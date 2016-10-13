@@ -109,7 +109,10 @@ void Player::applyInertia(float &pInertiaAxis, float &pDecelerationAxis)
 }
 void Player::OnCollision(GameObject *pTargetObject)
 {
-	//cout << "COLLIDE!" << endl;
+	if (pTargetObject ctype::is Player)
+	{
+
+	}
 }
 
 
