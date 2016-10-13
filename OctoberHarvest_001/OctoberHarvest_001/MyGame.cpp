@@ -40,7 +40,7 @@ int main()
 		}
 		if (updatedOnce)
 		{
-			gameWindow->clear();
+			gameWindow->clear(sf::Color(237, 237, 237));
 			holderScene->SceneRender();
 			gameWindow->display();
 		}
