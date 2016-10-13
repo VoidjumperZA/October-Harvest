@@ -28,7 +28,7 @@ void Player::Update(float pFrameTime)
 {
 	checkForInput();
 	//Animate(2, 5, 1000);
-	Animate(0, 2, 1, 2, 200 / (playerIndentifier + 1));
+	//Animate(0, 2, 1, 2, 200 / (playerIndentifier + 1));
 	movement(horizontalInertia * pFrameTime, verticalInertia * pFrameTime);
 	//cout << "(" << horizontalInertia << ", " << verticalInertia << ")" << endl;
 }
