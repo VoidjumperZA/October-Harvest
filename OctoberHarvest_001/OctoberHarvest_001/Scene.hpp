@@ -9,6 +9,7 @@ class Scene
 public:
 	Scene();
 	virtual void SceneUpdate(float pFrameTime);
+	virtual void SceneCollisionCheck();
 	virtual void SceneRender();
 private:
 

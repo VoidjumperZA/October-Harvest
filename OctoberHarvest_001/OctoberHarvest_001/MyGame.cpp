@@ -36,10 +36,11 @@ int main()
 		{
 			updatedOnce = true;
 			timer -= frameTime;			
-			holderScene->SceneUpdate(frameTime);			
+			holderScene->SceneUpdate(frameTime);	
+			holderScene->SceneCollisionCheck();
 		}
 		if (updatedOnce)
-		{
+		{			
 			gameWindow->clear(sf::Color(237, 237, 237));
 			holderScene->SceneRender();
 			gameWindow->display();

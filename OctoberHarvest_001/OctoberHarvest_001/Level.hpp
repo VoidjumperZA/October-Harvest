@@ -14,11 +14,13 @@ public:
 	void ToggleLayer(int pLayerNumber, bool pStatus);
 	bool GetLayerStatus(int pLayerNumber);
 	void UpdateLevel(float pFrameTime);
+	void CollisionCheckLevel();
 	void RenderLevel();
 	void TranslateLayer(int pLayerNumber, float pXTranslation, float pYTranslation);
 private:
 	//vector<vector<GameObject>> *layers = new vector<vector<GameObject>>();
 	vector<vector<GameObject*>> layers;
+
 	map<int, bool> layerStatus;
 	sf::RenderWindow *gameWindow;
 };

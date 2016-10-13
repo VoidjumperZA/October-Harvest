@@ -109,9 +109,9 @@ void Player::applyInertia(float &pInertiaAxis, float &pDecelerationAxis)
 }
 void Player::OnCollision(GameObject *pTargetObject)
 {
-	if (dynamic_cast<Player>() == NULL)
+	if (dynamic_cast<Player*>(pTargetObject) != NULL)
 	{
-		std::cout << "NOT A D2" << std::endl;
+		std::cout << "Hit player" << std::endl;
 	}
 }
 

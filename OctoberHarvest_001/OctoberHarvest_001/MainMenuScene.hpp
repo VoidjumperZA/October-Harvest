@@ -9,6 +9,7 @@ class MainMenuScene : public Scene
 public:
 	MainMenuScene();
 	void SceneUpdate(float pFrameTime) override;
+	void SceneCollisionCheck() override;
 	void SceneRender() override;
 private:
 };

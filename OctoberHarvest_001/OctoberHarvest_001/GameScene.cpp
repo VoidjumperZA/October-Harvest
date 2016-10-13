@@ -30,6 +30,11 @@ void GameScene::SceneUpdate(float pFrameTime)
 	}
 }
 
+void GameScene::SceneCollisionCheck()
+{
+	level->CollisionCheckLevel();
+}
+
 void GameScene::SceneRender()
 {
 	level->RenderLevel();

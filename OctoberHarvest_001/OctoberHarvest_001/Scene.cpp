@@ -13,6 +13,11 @@ void Scene::SceneUpdate(float pFrameTime)
 	
 }
 
+void Scene::SceneCollisionCheck()
+{
+
+}
+
 void Scene::SceneRender()
 {
 

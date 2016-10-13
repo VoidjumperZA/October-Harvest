@@ -13,7 +13,12 @@ void MainMenuScene::SceneUpdate(float pFrameTime)
 	cout << "This is MainMenuScene SceneRefresh" << endl;
 }
 
+void MainMenuScene::SceneCollisionCheck()
+{
+	cout << "This is MainMenuScene SceneCollisionCheck" << endl;
+}
+
 void MainMenuScene::SceneRender()
 {
-	cout << "This is MainMenuScene SceneRefresh" << endl;
+	cout << "This is MainMenuScene SceneRender" << endl;
 }

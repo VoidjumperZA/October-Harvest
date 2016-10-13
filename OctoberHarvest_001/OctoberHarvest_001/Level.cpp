@@ -52,11 +52,6 @@ void Level::ToggleLayer(int pLayerNumber, bool pStatus)
 
 void Level::UpdateLevel(float pFrameTime)
 {
-	//
-	//       NOTE: this actually updates our game objects
-	//			   the displaying is done in the second part
-	//
-
 	//go through each of our level's layers
 	for (size_t i = 0; i < layers.size(); i++)
 	{
@@ -71,14 +66,26 @@ void Level::UpdateLevel(float pFrameTime)
 			}
 		}
 	}
+}
 
-	//
-	//       NOTE: this part DISPLAYS our objects. 
-	//			   we want to display them, even if they're not updating
-	//
-
+void Level::CollisionCheckLevel()
+{
 	//go through each of our level's layers
-	
+	for (size_t i = 0; i < layers.size(); i++)
+	{
+		//check to see if that layer is enabled
+		if (layerStatus[i] == true)
+		{
+			//update every gameobject in that layer
+			for (size_t j = 0; j < layers[i].size(); j++)
+			{
+				for (size_t k = 0; k < layers[i].size(); k++)
+				{
+					layers[i][j]->OnCollision(layers[i][k]);
+				}				
+			}
+		}
+	}
 }
 
 void Level::RenderLevel()
@@ -96,6 +103,7 @@ void Level::RenderLevel()
 
 void Level::TranslateLayer(int pLayerNumber, float pXTranslation, float pYTranslation)
 {
+	//go through each of our level's layers
 	if (layerStatus[pLayerNumber] == true)
 	{
 		//cout << "Layer " << i << "is " << layerStatus[i] << endl;

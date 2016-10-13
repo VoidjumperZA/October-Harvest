@@ -11,6 +11,7 @@ class GameScene : public Scene
 public:
 	GameScene();
 	void SceneUpdate(float pFrameTime) override;
+	void SceneCollisionCheck() override;
 	void SceneRender() override;
 private:
 	int *worldGrid[16][9];
