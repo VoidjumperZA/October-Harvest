@@ -9,7 +9,10 @@ public:
 	AnimatedSprite(string pTextureLocation, int pRows, int pColumns); 
     void Animate(int beginRow, int beginCol, int endRow, int endCol, int timeMili);
 	void Animate(int beginIndex, int endIndex, int timeMili);
+	void EndAnimation();
 	void StopAnimation();
+	void SetFrame(int pFrameNumber);
+	sf::Vector2f GetCentrePoint();
 private:
 	int rows;
 	int columns;
@@ -25,7 +28,6 @@ private:
 	void internalAnimation(int beginIndex, int endIndex, int timeMili);
 	void setUpImage();
 	void startAnimation();
-	void endAnimation();
 };
 
 #endif

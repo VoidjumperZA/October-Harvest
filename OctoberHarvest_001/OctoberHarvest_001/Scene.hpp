@@ -11,6 +11,7 @@ public:
 	virtual void SceneUpdate(float pFrameTime);
 	virtual void SceneCollisionCheck();
 	virtual void SceneRender();
+	virtual void DeleteAllObjects();
 private:
 
 };

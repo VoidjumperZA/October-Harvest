@@ -23,5 +23,10 @@ void Scene::SceneRender()
 
 }
 
+void Scene::DeleteAllObjects()
+{
+
+}
+
 
 /*	*/

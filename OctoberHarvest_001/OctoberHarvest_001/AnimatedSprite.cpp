@@ -1,5 +1,6 @@
 #include "AnimatedSprite.hpp"
 #include <iostream>
+//#define DEBUG_VOID
 
 using namespace std;
 
@@ -22,8 +23,8 @@ void AnimatedSprite::Animate(int beginRow, int beginCol, int endRow, int endCol,
 {
 	//work out our begining and end indexes based on
 	//the columns and rows we were give to work with
-	int beginIndex = (rows * beginRow) + beginCol;
-	int endIndex = (rows * endRow) + endCol;
+	int beginIndex = (columns * beginRow) + beginCol;
+	int endIndex = (columns * endRow) + endCol;
 
 	//once we've got these initial values, plug them into our internal animation
 	internalAnimation(beginIndex, endIndex, timeMili);
@@ -43,12 +44,12 @@ void AnimatedSprite::Animate(int beginIndex, int endIndex, int timeMili)
 void AnimatedSprite::internalAnimation(int beginIndex, int endIndex, int timeMili)
 {
 	//resets the boolean and the clock
-	if (isAnimating == false)
-	{
-		startAnimation();
-	}
-	else
-	{
+	//if (isAnimating == false)
+	//{
+		//startAnimation();
+	//}
+	//else
+	//{
 		//clock moderates animation speed
 		sf::Time &elapsedTime = clock->getElapsedTime();
 
@@ -60,10 +61,11 @@ void AnimatedSprite::internalAnimation(int beginIndex, int endIndex, int timeMil
 			clock->restart();
 
 			//for debugging the right frames are being set
-			/*cout << "x: " << frames[beginIndex + counter].x << endl << "y: " << frames[beginIndex + counter].y << endl << endl;
+#ifdef DEBUG_VOID
+			cout << "x: " << frames[beginIndex + counter].x << endl << "y: " << frames[beginIndex + counter].y << endl << endl;
 			cout << "beginIndex + counter: " << frames[beginIndex].x << endl;
-			cout << beginIndex + counter << endl;*/
-
+			cout << beginIndex + counter << endl;
+#endif
 			//used to cycle through the right frames needs to
 			//be reset once it's reached the end of the block
 			//of frames we want to display
@@ -72,7 +74,7 @@ void AnimatedSprite::internalAnimation(int beginIndex, int endIndex, int timeMil
 			{
 				counter = 0;
 			}
-		}
+		//}
 	}
 }
 
@@ -93,8 +95,8 @@ void AnimatedSprite::setUpImage()
 	imageSize = texture->getSize();
 
 	//the pixel width and height of one frame in our image
-	frameHeight = imageSize.x / rows;
-	frameWidth = imageSize.y / columns;
+	frameHeight = imageSize.y / rows;
+	frameWidth = imageSize.x / columns;
 
 	//create an array with the number of frames we have
 	numberOfFrames = rows * columns;
@@ -123,10 +125,15 @@ void AnimatedSprite::setUpImage()
 	}
 
 	//set the first frame, just so the whole texture is not displayed
-	setTextureRect(sf::IntRect(frames[0].x, frames[0].y, frameWidth, frameHeight));
+	SetFrame(0);
 
 	//just to debug the values have been set correctly
-	/*
+#ifdef DEBUG_VOID
+	cout << "Number of Frames: " << numberOfFrames << endl;
+	cout << "Rows: " << rows << endl;
+	cout << "Columns: " << columns << endl;
+	cout << "Image size: [" << imageSize.x << ", " << imageSize.y << "]" << endl;
+	cout << "" << endl;
 	for (int k = 0; k < numberOfFrames; k++)
 	{
 		cout << "frame " << k << "'s x is set to: " << frames[k].x << endl;
@@ -135,7 +142,8 @@ void AnimatedSprite::setUpImage()
 		{
 			cout << endl;
 		}
-	}*/
+	}
+#endif
 }
 
 void AnimatedSprite::startAnimation()
@@ -144,9 +152,19 @@ void AnimatedSprite::startAnimation()
 	isAnimating = true;
 }
 
-void AnimatedSprite::endAnimation()
+void AnimatedSprite::EndAnimation()
 {
 	isAnimating = false;
+}
+
+void AnimatedSprite::SetFrame(int pFrameNumber)
+{
+	setTextureRect(sf::IntRect(frames[pFrameNumber].x, frames[pFrameNumber].y, frameWidth, frameHeight));
+}
+
+sf::Vector2f AnimatedSprite::GetCentrePoint()
+{
+	return sf::Vector2f(frameWidth / 2, frameHeight / 2);
 }
 
 

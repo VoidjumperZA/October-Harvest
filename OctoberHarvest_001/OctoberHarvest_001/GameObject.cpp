@@ -16,10 +16,7 @@ void GameObject::Update(float pFrameTime)
 
 void GameObject::OnCollision(GameObject *pTargetObject)
 {
-	if (getGlobalBounds().intersects(pTargetObject->getGlobalBounds()))
-	{
-		cout << "Collision Occured" << endl;
-	}
+
 }
 
 void GameObject::Destroy()
@@ -27,12 +24,31 @@ void GameObject::Destroy()
 
 }
 
+void GameObject::FollowAt(GameObject *pTargetObject, int pXOffset, int pYOffset, bool pMimicRotation)
+{
+	setPosition(pTargetObject->getPosition().x + pXOffset, pTargetObject->getPosition().y + pYOffset);
+	if (pMimicRotation == true)
+	{
+		setRotation(pTargetObject->getRotation());
+	}
+}
+
 void GameObject::AddToLevel(GameObject *pChildObject)
 {
 
 }
 
+int GameObject::GetPlayerIdentifier()
+{
+	return 999;
+}
+
 void GameObject::Translate(float pXTranslation, float pYTranslation)
 {
 	move(pXTranslation, pYTranslation);
+}
+
+void GameObject::Delete()
+{
+	delete this;
 }
