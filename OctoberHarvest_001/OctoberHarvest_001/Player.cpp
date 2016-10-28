@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include "AmmoPack.hpp"
 #include <iostream>
 //#define DEBUG_VOID
 
@@ -99,12 +100,19 @@ void Player::checkForInput()
 	//firing
 	if (sf::Keyboard::isKeyPressed(fire[playerIdentifier]))
 	{
-		if (chamberingRoundLock == false)
+		if (chamberingRoundLock == false && currentAmmoInMag >= 1)
 		{
+			cout << "MAG: " << currentAmmoInMag << " | AMMO: " << totalAmmo << endl;
 			bulletManager->AddBullet(playerState, playerIdentifier, facingRight, 0);
+			currentAmmoInMag -= 1;
 			clock->restart();
 			chamberingRoundLock = true;
 		}
+		else if (chamberingRoundLock == false && currentAmmoInMag <= 0)
+		{
+			//play sound
+		}
+
 		sf::Time &elapsedTime = clock->getElapsedTime();
 		if (elapsedTime.asMilliseconds() >= TIME_BETWEEN_SHOTS)
 		{
@@ -200,6 +208,16 @@ void Player::OnCollision(GameObject *pTargetObject)
 			setPosition(oldPosition);
 			reflectInertia(0.3f);		
 		}
+
+		//B) AMMOPACK
+		if (dynamic_cast<AmmoPack*>(pTargetObject) != NULL)
+		{
+			totalAmmo += MAGAZINE_SIZE;
+			if (totalAmmo > MAX_TOTAL_AMMO)
+			{
+				totalAmmo = MAX_TOTAL_AMMO;
+			}
+		}
 }
 
 void Player::controlAnimation()
@@ -276,6 +294,8 @@ void Player::reload()
 				reloadIndividualRoundLock = true;
 				reloadSound->play();
 				currentAmmoInMag += 1;
+				totalAmmo -= 1;
+				cout << "MAG: " << currentAmmoInMag << " | AMMO: " << totalAmmo << endl;
 			}
 			if (reloadSound->getStatus() != reloadSound->Playing)
 			{
@@ -356,7 +376,7 @@ void Player::switchStates(State pState)
 void Player::setUpSound()
 {
 	//reloadSoundBuffer->loadFromFile("Assets/Sounds/Shotgun_Reload.ogg");
-	reloadSoundBuffer->loadFromFile("Assets/Sounds/2.wav");
+	reloadSoundBuffer->loadFromFile("Assets/Sounds/Shotgun_Reload.ogg");
 	reloadSound->setBuffer(*reloadSoundBuffer);
 }
 

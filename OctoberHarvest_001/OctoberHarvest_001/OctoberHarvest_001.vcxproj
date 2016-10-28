@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AmmoPack.cpp" />
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
@@ -154,8 +155,10 @@
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Wraith.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AmmoPack.hpp" />
     <ClInclude Include="AnimatedSprite.hpp" />
     <ClInclude Include="Bullet.hpp" />
     <ClInclude Include="BulletManager.hpp" />
@@ -167,6 +170,7 @@
     <ClInclude Include="MainMenuScene.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="Wraith.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

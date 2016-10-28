@@ -9,6 +9,7 @@ class Bullet : public GameObject
 public:
 	Bullet(string pTextureLocation, int pRows, int pColumns, sf::Vector2f pStartingVelocity);
 	void Update(float pFrameTime) override;
+	void OnCollision(GameObject *pTargetObject) override;
 private:
 	int frameSwitcher;
 	sf::Vector2f inputVelocity;

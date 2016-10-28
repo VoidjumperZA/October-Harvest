@@ -1,26 +1,10 @@
-﻿Build started 2016/10/26 11:48:24 PM.
-     1>Project "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\OctoberHarvest_001\OctoberHarvest_001.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-audio.2.4.0.0\build\native\../..//build/native/include/" /I"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-graphics.2.4.0.0\build\native\../..//build/native/include/" /I"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-window.2.4.0.0\build\native\../..//build/native/include/" /I"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/include/" /ZI /nologo /W3 /WX- /Od /D HAS_SFML /D HAS_SFML /D HAS_SFML /D HAS_SFML /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Player.cpp
-         Player.cpp
-     1>d:\offline onedrive\saxion\course folder\year 2\q 2.1\c++\project files\october harvest git repository\octoberharvest_001\octoberharvest_001\player.hpp(23): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-     1>d:\offline onedrive\saxion\course folder\year 2\q 2.1\c++\project files\october harvest git repository\octoberharvest_001\octoberharvest_001\player.hpp(25): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.exe" /INCREMENTAL /NOLOGO "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-audio.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\dynamic\sfml-audio-d.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-graphics.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\dynamic\sfml-graphics-d.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-window.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\dynamic\sfml-window-d.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\vorbisfile.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\vorbisenc.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\vorbis.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\openal32.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\ogg.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\jpeg.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\freetype.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\flac.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\dynamic\sfml-system-d.lib" "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\packages\sfml-system.2.4.0.0\build\native\../..//build/native/lib/x64\v140\Debug\sfml-main-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.lib" /MACHINE:X64 x64\Debug\AnimatedSprite.obj
-         x64\Debug\Bullet.obj
-         x64\Debug\BulletManager.obj
-         x64\Debug\Enemy.obj
-         x64\Debug\GameObject.obj
-         x64\Debug\GameScene.obj
-         x64\Debug\Gun.obj
-         x64\Debug\Level.obj
-         x64\Debug\MainMenuScene.obj
-         x64\Debug\MyGame.obj
-         x64\Debug\Player.obj
-         x64\Debug\Scene.obj
-         OctoberHarvest_001.vcxproj -> D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.exe
-     1>Done Building Project "D:\Offline OneDrive\Saxion\Course Folder\Year 2\Q 2.1\C++\Project Files\October Harvest Git Repository\OctoberHarvest_001\OctoberHarvest_001\OctoberHarvest_001.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.61
+﻿  Bullet.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Player.cpp
+  MyGame.cpp
+  Gun.cpp
+  GameScene.cpp
+  BulletManager.cpp
+  OctoberHarvest_001.vcxproj -> C:\Users\Voidjumper\Desktop\Temporary Saxion\October Harvest Git\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.exe
+  OctoberHarvest_001.vcxproj -> C:\Users\Voidjumper\Desktop\Temporary Saxion\October Harvest Git\OctoberHarvest_001\x64\Debug\OctoberHarvest_001.pdb (Full PDB)
