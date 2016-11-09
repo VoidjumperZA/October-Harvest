@@ -43,6 +43,11 @@ void Level::AddToLayer(GameObject *pGameObject, int pLayerNumber, bool pCollidab
 	}
 }
 
+void Level::RemoveFromLayer(GameObject *pGameObject, int pLayerNumber)
+{
+	layers[pLayerNumber].erase(remove(layers[pLayerNumber].begin(), layers[pLayerNumber].end(), pGameObject), layers[pLayerNumber].end());
+}
+
 ///
 ///<summary>brief enable or disable a layer</summary>
 ///
@@ -119,7 +124,7 @@ void Level::DeleteLevel()
 		//delete every gameobject in that layer
 		for (size_t j = 0; j < layers[i].size(); j++)
 		{
-			layers[i][j]->Delete();
+			layers[i][j]->DeleteGameObject();
 		}
 	}
 

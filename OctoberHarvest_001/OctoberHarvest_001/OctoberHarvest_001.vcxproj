@@ -147,8 +147,10 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="MainMenuScene.cpp" />
@@ -163,8 +165,10 @@
     <ClInclude Include="Bullet.hpp" />
     <ClInclude Include="BulletManager.hpp" />
     <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="Explosion.hpp" />
     <ClInclude Include="GameObject.hpp" />
     <ClInclude Include="GameScene.hpp" />
+    <ClInclude Include="Ghost.hpp" />
     <ClInclude Include="Gun.hpp" />
     <ClInclude Include="Level.hpp" />
     <ClInclude Include="MainMenuScene.hpp" />

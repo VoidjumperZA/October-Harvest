@@ -48,7 +48,7 @@ void GameObject::Translate(float pXTranslation, float pYTranslation)
 	move(pXTranslation, pYTranslation);
 }
 
-void GameObject::Delete()
+void GameObject::DeleteGameObject()
 {
 	delete this;
 }

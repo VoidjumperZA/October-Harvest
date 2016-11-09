@@ -19,6 +19,15 @@ GameScene::GameScene() : Scene()
 	player_001_gun = new Gun("Assets/Sprites/Anim/Final/Gun_Fullsheet.png", 1, 6, player_001_animSprite, player_001, bulletManager, sf::Vector2i(0, 0));
 	player_002_gun = new Gun("Assets/Sprites/Anim/Final/Gun_FullSheet.png", 1, 6, player_002_animSprite, player_002, bulletManager, sf::Vector2i(0, 0));
 
+	testGhost = new Ghost(level, "Assets/Sprites/Anim/Final/Ghost_FullSheet.png", 2, 3);
+	testGhost->setPosition(600, 600);
+
+	testWraith = new Wraith(level, "Assets/Sprites/Anim/Final/Wraith_FullSheet.png", 2, 3);
+	testWraith->setPosition(1000, 800);
+
+	ammoPack = new AmmoPack("Assets/Sprites/Anim/Final/AmmoPack_FullSheet.png", 1, 1);
+	ammoPack->setPosition(200, 200);
+
 	level->CreateNewLayer();
 	level->AddToLayer(player_001, 0, true);
 	level->AddToLayer(player_002, 0, true);
@@ -27,7 +36,10 @@ GameScene::GameScene() : Scene()
 	level->AddToLayer(player_002_animSprite, 0, false);
 	level->AddToLayer(player_001_gun, 0, false);
 	level->AddToLayer(player_002_gun, 0, false);
-
+	level->AddToLayer(testGhost, 0, true);
+	level->AddToLayer(testWraith, 0, true);
+	level->AddToLayer(ammoPack, 0, true);
+		
 }
 
 void GameScene::SceneUpdate(float pFrameTime)

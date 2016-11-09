@@ -11,6 +11,7 @@ public:
 	void CreateNewLayer();
 	size_t GetNumberOfLayers();
 	void AddToLayer(GameObject *pGameObject, int pLayerNumber, bool pCollidable);
+	void RemoveFromLayer(GameObject *pGameObject, int pPlayerNumber);
 	void ToggleLayer(int pLayerNumber, bool pStatus);
 	bool GetLayerStatus(int pLayerNumber);
 	void UpdateLevel(float pFrameTime);

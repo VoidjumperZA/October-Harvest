@@ -102,7 +102,7 @@ void BulletManager::AddBullet(int pPlayerState, int pPlayerID, bool pFacingRight
 	//set position
 	newBullet->setPosition(activeGunPos);	 
 
-	level->AddToLayer(newBullet, pLayer, false);
+	level->AddToLayer(newBullet, pLayer, true);
 }
 
 void BulletManager::SetGunPosition(int pPlayerID, sf::Vector2f pPosition)

@@ -17,7 +17,7 @@ public:
 	virtual void AddToLevel(GameObject *pChildObject);
 	virtual void Translate(float pXTranslation, float pYTranslation);
 	virtual int GetPlayerIdentifier();
-	void Delete();
+	void DeleteGameObject();
 private:
 	int count;
 };
